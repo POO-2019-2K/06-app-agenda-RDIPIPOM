@@ -1,0 +1,9 @@
+body{
+    height: 1000px;
+}
+
+.container-fluid{
+    background-color: darkviolet;
+    height: 100%;
+}
+
