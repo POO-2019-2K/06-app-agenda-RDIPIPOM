@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/c6b90edd-517a-4628-ad44-83518df2d9d0)](https://codebeat.co/projects/github-com-poo-2019-2k-06-app-agenda-rdipipom-master)
+
 # Ejercicio 6 La Agenda
 
 ## Tiempo para realizar la actividad
