@@ -3,7 +3,20 @@ body{
 }
 
 .container-fluid{
-    background-color: darkviolet;
+    background-color: #4A235A;
     height: 100%;
+    color: white;
 }
 
+#slogan{
+    font-size: 20px;
+}
+
+header{
+    background-color: #0B5345;
+    width: 100%;
+}
+
+#form-structure{
+    margin: 20px;
+    }
