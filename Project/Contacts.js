@@ -4,8 +4,8 @@ export default class{
     }
 
     _updateArrayContacts() {
-        if (localStorage.getItem('contacts') != null) {
-            this._contacts = JSON.parse(localStorage.getItem('contacts'));
+        if (localStorage.getItem("contacts") != null) {
+            this._contacts = JSON.parse(localStorage.getItem("contacts"));
         }
     }
 
@@ -20,6 +20,6 @@ export default class{
         //Add to array
         this._contacts.push(objContact);
         //Save in Local Storange
-        localStorage.setItem('contacts', JSON.stringify(this._contacts));
+        localStorage.setItem("contacts", JSON.stringify(this._contacts));
     }
 }
