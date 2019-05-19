@@ -19,4 +19,16 @@ header{
 
 #form-structure{
     margin: 20px;
-    }
+}
+
+tr, td, th{
+    text-align: center;
+}
+
+th{
+    background-color: #000000;
+}
+
+.sub-header{
+    background-color: #333333;
+}
