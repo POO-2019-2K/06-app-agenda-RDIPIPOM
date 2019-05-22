@@ -1,12 +1,10 @@
-
 import Table from "./Table.js";
 import Contacts from "./Contacts.js";
 
 export default class Main {
     constructor() {
-        //localStorage.removeItem('contacts');
-        this._table = new Table(document.querySelector("#table"));
         this._contacts = new Contacts();
+        this._table = new Table(document.querySelector("#table"), this._contacts);
         //Update table
         this._table.update(this._contacts.getContactsSaved());
     }
@@ -14,10 +12,19 @@ export default class Main {
     activeListenners() {
         document.querySelector("#btnAdd").addEventListener("click", () => {
             if (document.querySelector("#form").checkValidity()) {
-                //Create and save contact
-                this._contacts.saveContact(this._createObjectContact());
-                //Update table
-                this._table.update(this._contacts.getContactsSaved());
+                //Doesn't exist this contact?
+                if (!this._contacts.isContactRegistered(document.querySelector("#email").value)) {
+                    //Create and save contact
+                    this._contacts.saveContact(this._createObjectContact());
+                    //Update table
+                    this._table.update(this._contacts.getContactsSaved());
+                }else{
+                    swal.fire({
+                        type: "warning",
+                        title: "Advertencia",
+                        text: "Este correo ya ha sido registrado anteriormente, cámbielo para continuar"
+                    })
+                }
             } else {
                 swal.fire({
                     type: "warning",

@@ -1,5 +1,5 @@
-export default class{
-    constructor(){
+export default class {
+    constructor() {
         this._contacts = new Array();
     }
 
@@ -9,17 +9,44 @@ export default class{
         }
     }
 
-    getContactsSaved(){
+    getContactsSaved() {
         this._updateArrayContacts();
         return this._contacts;
     }
 
-    saveContact(objContact){
+    saveContact(objContact) {
         //Update array contacts
         this._updateArrayContacts();
         //Add to array
         this._contacts.push(objContact);
         //Save in Local Storange
         localStorage.setItem("contacts", JSON.stringify(this._contacts));
+    }
+
+    deleteContact(email) {
+        //Update Array Contacts
+        this._updateArrayContacts();
+        //Find the object
+        this._contacts.forEach((objectContact, index) => {
+            if (objectContact.email === email) {
+                //Delete
+                this._contacts.splice(index, 1);
+                //Save in local Storange
+                localStorage.setItem('contacts', JSON.stringify(this._contacts));
+                return;
+            }
+        });
+    }
+
+    isContactRegistered(email) {
+        let registered = false;
+        this._contacts.forEach((objContact) => {
+            if(objContact.email === email){
+                registered = true;
+                return;
+            }
+        });
+
+        return registered;
     }
 }
