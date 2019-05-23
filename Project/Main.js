@@ -3,6 +3,7 @@ import Contacts from "./Contacts.js";
 
 export default class Main {
     constructor() {
+        //localStorage.removeItem('contacts');
         this._contacts = new Contacts();
         this._table = new Table(document.querySelector("#table"), this._contacts);
         //Update table
@@ -23,21 +24,26 @@ export default class Main {
                         type: "warning",
                         title: "Advertencia",
                         text: "Este correo ya ha sido registrado anteriormente, cámbielo para continuar"
-                    })
+                    });
                 }
             } else {
                 swal.fire({
                     type: "warning",
                     title: "Advertencia",
                     text: "Complete los datos para poder registrar un nuevo contacto"
-                })
+                });
             }
+        });
+
+        document.querySelector('#sort').addEventListener('change', () => {
+            
         });
     }
 
     _createObjectContact() {
         let objContact = {
             name: document.querySelector("#name").value,
+            age: document.querySelector("#age").value,
             phone: document.querySelector("#phone").value,
             address: document.querySelector("#address").value,
             email: document.querySelector("#email").value

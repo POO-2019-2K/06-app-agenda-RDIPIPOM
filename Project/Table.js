@@ -16,7 +16,7 @@ export default class Table {
     }
 
     _RemoveRows() {
-        for (let i = this._table.rows.length - 1; i > 1; i--) {
+        for (let i = this._table.rows.length - 1; i > 2; i--) {
             this._table.deleteRow(i);
         }
     }
@@ -29,10 +29,12 @@ export default class Table {
         let cell = row.insertCell(0);
         cell.innerHTML = objContact.name;
         cell = row.insertCell(1);
-        cell.innerHTML = objContact.phone;
+        cell.innerHTML = objContact.age;
         cell = row.insertCell(2);
-        cell.innerHTML = objContact.address;
+        cell.innerHTML = objContact.phone;
         cell = row.insertCell(3);
+        cell.innerHTML = objContact.address;
+        cell = row.insertCell(4);
         cell.innerHTML = objContact.email;
         this._addButtonDelete(row, objContact);
     }
@@ -49,7 +51,7 @@ export default class Table {
             this.update(this._contacts.getContactsSaved());
         });
         //Show in HTML
-        let cell = row.insertCell(4);
+        let cell = row.insertCell(5);
         cell.appendChild(btnDelete);
     }
 }
