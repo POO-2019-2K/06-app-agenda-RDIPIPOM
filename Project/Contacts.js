@@ -50,9 +50,9 @@ export default class {
         return registered;
     }
 
-    sortByName(typeOfSort) {
+    sortByName() {
         this._contacts.sort(function (a, b) {
-            if (b.name > a.name) {
+            if (a.name > b.name) {
                 return 1;
             } else {
                 return -1;
@@ -64,7 +64,7 @@ export default class {
 
     sortByAge() {
         this._contacts.sort(function (a, b) {
-            return (b.age - a.age)
+            return (a.age - b.age)
         })
         //Save in local Storange
         localStorage.setItem('contacts', JSON.stringify(this._contacts));
