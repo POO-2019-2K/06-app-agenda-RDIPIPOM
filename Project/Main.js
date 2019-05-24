@@ -36,7 +36,11 @@ export default class Main {
         });
 
         document.querySelector('#sort').addEventListener('change', () => {
-            
+            if(document.querySelector('#sort').value === 'tname'){
+                this._table.sortByName();
+            }else{
+                this._table.sortByAge();
+            }
         });
     }
 

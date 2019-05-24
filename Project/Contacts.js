@@ -41,12 +41,32 @@ export default class {
     isContactRegistered(email) {
         let registered = false;
         this._contacts.forEach((objContact) => {
-            if(objContact.email === email){
+            if (objContact.email === email) {
                 registered = true;
                 return;
             }
         });
 
         return registered;
+    }
+
+    sortByName(typeOfSort) {
+        this._contacts.sort(function (a, b) {
+            if (b.name > a.name) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        //Save in local Storange
+        localStorage.setItem('contacts', JSON.stringify(this._contacts));
+    }
+
+    sortByAge() {
+        this._contacts.sort(function (a, b) {
+            return (b.age - a.age)
+        })
+        //Save in local Storange
+        localStorage.setItem('contacts', JSON.stringify(this._contacts));
     }
 }
