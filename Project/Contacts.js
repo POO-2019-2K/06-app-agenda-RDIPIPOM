@@ -59,7 +59,7 @@ export default class {
             }
         });
         //Save in local Storange
-        localStorage.setItem('contacts', JSON.stringify(this._contacts));
+        localStorage.setItem("contacts", JSON.stringify(this._contacts));
     }
 
     sortByAge() {

@@ -20,14 +20,14 @@ export default class Main {
                     //Update table
                     this._table.update(this._contacts.getContactsSaved());
                 }else{
-                    swal.fire({
+                    window.swal.fire({
                         type: "warning",
                         title: "Advertencia",
                         text: "Este correo ya ha sido registrado anteriormente, cámbielo para continuar"
                     });
                 }
             } else {
-                swal.fire({
+                window.swal.fire({
                     type: "warning",
                     title: "Advertencia",
                     text: "Complete los datos para poder registrar un nuevo contacto"
