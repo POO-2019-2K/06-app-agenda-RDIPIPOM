@@ -32,7 +32,7 @@ export default class {
                 //Delete
                 this._contacts.splice(index, 1);
                 //Save in local Storange
-                localStorage.setItem('contacts', JSON.stringify(this._contacts));
+                localStorage.setItem("contacts", JSON.stringify(this._contacts));
                 return;
             }
         });
