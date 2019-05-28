@@ -35,8 +35,8 @@ export default class Main {
             }
         });
 
-        document.querySelector('#sort').addEventListener('change', () => {
-            if(document.querySelector('#sort').value === 'tname'){
+        document.querySelector("#sort").addEventListener("change", () => {
+            if(document.querySelector("#sort").value === "tname"){
                 this._table.sortByName();
             }else{
                 this._table.sortByAge();
@@ -51,7 +51,7 @@ export default class Main {
             phone: document.querySelector("#phone").value,
             address: document.querySelector("#address").value,
             email: document.querySelector("#email").value
-        }
+        };
 
         return objContact;
     }

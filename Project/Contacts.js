@@ -64,9 +64,9 @@ export default class {
 
     sortByAge() {
         this._contacts.sort(function (a, b) {
-            return (a.age - b.age)
-        })
+            return (a.age - b.age);
+        });
         //Save in local Storange
-        localStorage.setItem('contacts', JSON.stringify(this._contacts));
+        localStorage.setItem("contacts", JSON.stringify(this._contacts));
     }
 }

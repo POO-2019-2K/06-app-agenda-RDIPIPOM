@@ -41,12 +41,12 @@ export default class Table {
 
     _addButtonDelete(row, objContact) {
         //Create button delete
-        let btnDelete = document.createElement('input');
+        let btnDelete = document.createElement("input");
         btnDelete.type = "button";
         btnDelete.value = "Eliminar";
         btnDelete.className = "btn btn-danger";
         //Add listenner
-        btnDelete.addEventListener('click', () => {
+        btnDelete.addEventListener("click", () => {
             this._contacts.deleteContact(objContact.email);
             this.update(this._contacts.getContactsSaved());
         });
@@ -63,17 +63,5 @@ export default class Table {
     sortByAge() {
         this._contacts.sortByAge();
         this.update(this._contacts.getContactsSaved());
-        /*
-        //Ordenar descendentemente por value
-        items = [{ id: 1, value: 3, perc: 0.5 }, { id: 2, value: 2, perc: 0.3 }, { id: 3, value: 1, perc: 0.2 }]
-        items.sort(function (a, b) {
-            return (b.value - a.value)
-        })
-
-        //Ordenar ascendentemente por perc
-        items.sort(function (a, b) {
-            return (a.perc - b.perc)
-        })
-        */
     }
 }
