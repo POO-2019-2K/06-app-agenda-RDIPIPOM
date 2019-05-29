@@ -27,15 +27,15 @@ export default class Table {
         //Show in table
         let row = this._table.insertRow(-1);
         let cell = row.insertCell(0);
-        cell.innerHTML = objContact.name;
+        cell.appendChild(document.createTextNode(objContact.name));
         cell = row.insertCell(1);
-        cell.innerHTML = objContact.age;
+        cell.appendChild(document.createTextNode(objContact.age));
         cell = row.insertCell(2);
-        cell.innerHTML = objContact.phone;
+        cell.appendChild(document.createTextNode(objContact.phone));
         cell = row.insertCell(3);
-        cell.innerHTML = objContact.address;
+        cell.appendChild(document.createTextNode(objContact.address));
         cell = row.insertCell(4);
-        cell.innerHTML = objContact.email;
+        cell.appendChild(document.createTextNode(objContact.email));
         this._addButtonDelete(row, objContact);
     }
 
